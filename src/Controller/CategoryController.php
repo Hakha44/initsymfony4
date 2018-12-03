@@ -33,4 +33,8 @@ class CategoryController extends AbstractController
     {
         return $this->render('category/index.html.twig', ['category' => $category]);
     }
+    public function showAllByCategory()
+    {
+
+    }
 }
