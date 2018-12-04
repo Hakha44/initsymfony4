@@ -3,5 +3,14 @@
 {% block title %}Hello !{% endblock %}
 
 {% block body %}
-    <a href="{{ path('category', {'id': category.id }) }}">{{ category.name }}</a>
+    <h1>Liste des articles par catégorie</h1>
+
+    {%  for category in categories %}
+        <h2>   {% filter upper %} {{ category.name }}  {% endfilter %} </h2>
+
+        {%  for article in category.article %}
+            <h3>  {{ article.title }} </h3>
+            <p>   {{ article.content }} </p>
+        {% endfor %}
+    {% endfor %}
 {% endblock %}
